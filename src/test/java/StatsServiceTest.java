@@ -9,7 +9,7 @@ public class StatsServiceTest {
         StatsService service = new StatsService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expectedSumma = 180;
-        int actualSumma = service.SumOfAllSales(sales);
+        int actualSumma = service.sumOfAllSales(sales);
         Assertions.assertEquals(expectedSumma, actualSumma);
 
     }
@@ -19,7 +19,7 @@ public class StatsServiceTest {
         StatsService service = new StatsService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expectedAverageSales = 15;
-        int actualAverageSales = service.AverageSalesMonth(sales);
+        int actualAverageSales = service.averageSalesMonth(sales);
         Assertions.assertEquals(expectedAverageSales, actualAverageSales);
     }
 
@@ -28,7 +28,7 @@ public class StatsServiceTest {
         StatsService service = new StatsService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expectedMonth = 8;
-        int actualMonth = service.MaxSales(sales);
+        int actualMonth = service.maxSales(sales);
         Assertions.assertEquals(expectedMonth, actualMonth);
     }
 
@@ -46,7 +46,7 @@ public class StatsServiceTest {
         StatsService service = new StatsService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expectedMonths = 5;
-        int actualMonths = service.SalesBelowAverage(sales);
+        int actualMonths = service.salesBelowAverage(sales);
         Assertions.assertEquals(expectedMonths, actualMonths);
     }
 
@@ -55,7 +55,7 @@ public class StatsServiceTest {
         StatsService service = new StatsService();
         int[] sales = {8, 15, 13, 15, 17, 20, 19, 20, 7, 14, 14, 18};
         int expectedMonths = 5;
-        int actualMonths = service.SalesHigherAverage(sales);
+        int actualMonths = service.salesHigherAverage(sales);
         Assertions.assertEquals(expectedMonths, actualMonths);
 
     }

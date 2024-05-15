@@ -4,7 +4,7 @@ package ru.netology.stats;
 public class StatsService {
     //Сумма всех продаж
 
-    public int SumOfAllSales(int[] sales) {
+    public int sumOfAllSales(int[] sales) {
         int summa = 0;
         for (int i = 0; i < sales.length; i++) {
             summa = summa + sales[i];
@@ -13,7 +13,7 @@ public class StatsService {
     }
 
     // средняя сумма продаж в месяц
-    public int AverageSalesMonth(int[] sales) {
+    public int averageSalesMonth(int[] sales) {
         int summa = 0;
 
         for (int i = 0; i < sales.length; i++) {
@@ -23,7 +23,7 @@ public class StatsService {
     }
 
     //номер месяца, в котором был пик продаж
-    public int MaxSales(int[] sales) {
+    public int maxSales(int[] sales) {
         int MaxMonth = 0;
         for (int i = 0; i < sales.length; i++) {
             if (sales[i] >= sales[MaxMonth]) {
@@ -47,10 +47,11 @@ public class StatsService {
     }
 
     //количество месяцев, в которых продажи были ниже среднего
-    public int SalesBelowAverage(int[] sales) {
+    public int salesBelowAverage(int[] sales) {
         int SumMonth = 0;
+        long avg = averageSalesMonth(sales);
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] < AverageSalesMonth(sales)) {
+            if (sales[i] < avg) {
                 SumMonth = SumMonth + 1;
             }
         }
@@ -58,10 +59,11 @@ public class StatsService {
     }
 
     //количество месяцев, в которых продажи были выше среднего
-    public int SalesHigherAverage(int[] sales) {
+    public int salesHigherAverage(int[] sales) {
         int SumMonths = 0;
+        long avg = averageSalesMonth(sales);
         for (int i = 0; i < sales.length; i++) {
-            if (sales[i] > AverageSalesMonth(sales)) {
+            if (sales[i] > avg) {
                 SumMonths = SumMonths + 1;
             }
         }
